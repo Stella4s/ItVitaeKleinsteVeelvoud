@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItVitaeKleinsteVeelvoud"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Kleinste Veelvoud" Height="450" Width="700">
     
     <Window.Resources>
         <Style TargetType="Label">
@@ -20,7 +20,17 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
-        
+        <Style TargetType="TextBlock">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
     </Window.Resources>
     
     
@@ -38,12 +48,19 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label      Grid.Row="0" Grid.Column="0" Content="Getal I"/>
-                <TextBox    Grid.Row="0" Grid.Column="1"/>
+                <TextBox Name="TextBx1"    Grid.Row="0" Grid.Column="1"/>
                 <Label      Grid.Row="0" Grid.Column="2" Content="Getal II"/>
-                <TextBox    Grid.Row="0" Grid.Column="3"/>
+                <TextBox Name="TextBx2"     Grid.Row="0" Grid.Column="3"/>
             </Grid>
-            <Button     Grid.Row="1" Content="Berekenen"/>
-            <TextBlock Name="TextB1" Grid.Row="1"/>
+            <Grid  Grid.Row="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Button Content="Berekenen" Click="Btn_Click_GetVeelvoud"/>
+                <TextBlock Name="TextB1" Grid.Row="1" TextWrapping="Wrap"/>
+            </Grid>
+           
         </Grid>
     </Grid>
 </Window>
